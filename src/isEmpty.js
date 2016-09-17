@@ -17,12 +17,14 @@ var equals = require('./equals');
  * @see R.empty
  * @example
  *
- *      R.isEmpty([1, 2, 3]);   //=> false
  *      R.isEmpty([]);          //=> true
- *      R.isEmpty('');          //=> true
- *      R.isEmpty(null);        //=> false
  *      R.isEmpty({});          //=> true
+ *      R.isEmpty('');          //=> true
+ *      R.isEmpty([1, 2, 3]);   //=> false
  *      R.isEmpty({length: 0}); //=> false
+ *      R.isEmpty('eweda');     //=> false
+ *      R.isEmpty(null);        //=> false
+ *      R.isEmpty(undefined);   //=> false
  */
 module.exports = _curry1(function isEmpty(x) {
   return x != null && equals(x, empty(x));
